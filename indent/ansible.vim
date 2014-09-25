@@ -29,9 +29,8 @@ function GetAnsibleIndent(lnum)
 
   let indent = indent(prevlnum)
   let increase = indent + &sw
-
   if prevline =~ ':\s*$'
-    return increase
+    return indent
   elseif prevline =~ '^\s*-\s*$'
     return increase
   elseif prevline =~ '^\s*-\s\+[^:]\+:\s*\S'
